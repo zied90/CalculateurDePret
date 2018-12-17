@@ -13,10 +13,12 @@ export class AppComponent {
     interet:0,
     nbAnnees:0
   };
-  PaiementMens:any;
-  paiementTotal:any;
-  totalInteret:any;
-  message:string;
+  resultat={
+    PaiementMens:0,
+    paiementTotal:0,
+    totalInteret:0,
+  }
+sage:string;
 sendFeedback(): void {
   const principal = parseFloat(this.model.montant);
   const calculateInteret = parseFloat(this.model.interet) / 100 / 12;
@@ -28,12 +30,12 @@ sendFeedback(): void {
     const mensuel = (principal * x * calculateInteret) / (x - 1);
 
     if (isFinite(mensuel)) {
-        this.PaiementMens = mensuel.toFixed(2);
-        this.paiementTotal = (mensuel * calculPaiement).toFixed(2);
-        this.totalInteret = ((mensuel * calculPaiement) - principal).toFixed(2);
+        this.resultat.PaiementMens = mensuel.toFixed(2);
+        this.resultat.paiementTotal = (mensuel * calculPaiement).toFixed(2);
+        this.resultat.totalInteret = ((mensuel * calculPaiement) - principal).toFixed(2);
     } else {
       this.message = true;
-
+      this.resultat={};
       setTimeout(()=>{
             this.message = false;
        }, 3000);
