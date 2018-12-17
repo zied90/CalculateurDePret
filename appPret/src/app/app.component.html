@@ -1,21 +1,55 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="container">
+  <div class="row">
+      <div class="col-md-6 mx-auto">
+          <div class="card card-body text-center mt-5" style="background-color: aliceblue">
+              <h1 class="heading display-5 pb-3">Calculateur de prêt</h1>
+              <form id="loan-form">
+                  <div class="form-group">
+                      <div class="input-group">
+                          <span class="input-group-addon">$</span>
+                          <input type="number" class="form-control" id="montant" placeholder="Montant du prêt">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="input-group">
+                          <span class="input-group-addon">%</span>
+                          <input type="number" class="form-control" id="interet" placeholder="Interêt du prêt">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="input-group">
+                          <input type="number" class="form-control" id="nbAnnees" placeholder="Nombre d'années à payer(1,2,3..)">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <input type="submit" value="Calculer" class="btn btn-dark btn-block">
+                  </div>
+              </form>
+
+              <div id="resulats" class="pt-4">
+                  <h5>Resultats</h5>
+                  <div class="form-group">
+                      <div class="input-group">
+                          <span class="input-group-addon">Paiement Mensuel</span>
+                          <input type="number" class="form-control" id="PaiementMens">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="input-group">
+                          <span class="input-group-addon">Paiement total</span>
+                          <input type="number" class="form-control" id="PaiementTotal">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <div class="input-group">
+                          <span class="input-group-addon">Interêt total </span>
+                          <input type="number" class="form-control" id="interetTotal">
+                      </div>
+                  </div>
+              </div>
+            </div>
+      </div>
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
 <router-outlet></router-outlet>
